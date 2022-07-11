@@ -15,8 +15,8 @@
     $stok=$_POST['stok'];
     echo "<tr><td>Kode Barang<td>$kodebarang";
     echo "<tr><td>Nama Barang<td>$namabarang";
-    echo "<tr><td>Harga<td>$jenisbarang";
-    echo "<tr><td>Stok<td>$ukuran";
+    echo "<tr><td>Jenis Barang<td>$jenisbarang";
+    echo "<tr><td>Ukuran<td>$ukuran";
     echo "<tr><td>Harga<td>$harga";
     echo "<tr><td>Stok<td>$stok";
     echo "</table>";
@@ -33,5 +33,5 @@
         }
     ?>
     <br/>
-    <a href="pertemuan301db.php">View Data Barang</a>
+    <a href="pertemuan301db.php">View Barang</a>
 </html>

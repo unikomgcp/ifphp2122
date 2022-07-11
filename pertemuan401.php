@@ -3,7 +3,7 @@
         <title>PHP Pertemuan 4</title>
     </head>
     <body align="center">
-        <h1>Imput Data Barang</h1>
+        <h1>Input Data Barang</h1>
         <hr>
         <form name="fpenjualan" action="simpan401.php" method="post">
             <table align="center">
@@ -19,9 +19,9 @@
                     <td>Jenis Barang</td>
                     <td>: 
                         <select name="jenisbarang">
-                            <option value="kaoso">Kaos O-Neck</option>
-                            <option value="kaosv">Kaos V-Neck</option>
-                            <option value="kaosw">Kaos W-Neck</option>
+                            <option value="O-Neck">O-Neck</option>
+                            <option value="V-Neck">V-Neck</option>
+                            <option value="T-Neck">T-Neck</option>
                         </select>
                     </td>
                 </tr>

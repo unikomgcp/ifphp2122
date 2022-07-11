@@ -16,20 +16,34 @@
             <td width=50><center>Ukuran
             <td width=100><center>Harga
             <td width=50><center>Stok
+            <td width=100><center>Proses</td>
         <?php
         require ("koneksidb301.php");
         $sql="select * from barang";
         $hasil=mysqli_query($conn,$sql);
         $row=mysqli_fetch_row($hasil);
+        
         $n=1;
         do
         {
-        list($kodebrg,$namabarang,$jenisbarang,$ukuran,$harga,$stok)=$row;
-        echo "<tr><td>$n<td>$kodebrg<td>$namabarang<td>$jenisbarang<td>$ukuran<td align=right>$harga<td align=right>$stok";
+        list($kodebarang,$namabarang,$jenisbarang,$ukuran,$harga,$stok)=$row;
+        echo "<tr>
+                <td>$n</td>
+                <td>$kodebarang</td>
+                <td>$namabarang</td>
+                <td>$jenisbarang</td>
+                <td>$ukuran</td>
+                <td align=right>$harga</td>
+                <td align=right>$stok</td>
+                <td align=center>
+                    <a href='pertemuan501edit.php?kodebarang=$kodebarang'>Edit</a> 
+                    <a href='hapus501.php?kodebarang=$kodebarang'>Delete</a>
+                </td>
+             </tr>";
         $n++;
         }
         while($row=mysqli_fetch_row($hasil));
         ?>
-            <tr><td align="center" colspan="7"><a href="pertemuan401.php">Tambah Barang</a></td>
+            <tr><td align="center" colspan="8"><a href="pertemuan401.php">Tambah Barang</a></td>
     </body>
 </html>
