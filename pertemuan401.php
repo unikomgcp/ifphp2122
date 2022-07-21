@@ -2,10 +2,13 @@
     <head>
         <title>PHP Pertemuan 4</title>
     </head>
+    <?php
+        require ("barangfunction.php");
+    ?>
     <body align="center">
         <h1>Input Data Barang</h1>
         <hr>
-        <form name="fpenjualan" action="simpan401.php" method="post">
+        <form name="fpenjualan" action="<?php simpanbarang(); ?>" method="post">
             <table align="center">
                 <tr>
                     <td>Kode Barang</td>

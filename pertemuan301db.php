@@ -16,7 +16,7 @@
             <td width=50><center>Ukuran
             <td width=100><center>Harga
             <td width=50><center>Stok
-            <td width=100><center>Proses</td>
+            <td width=200><center>Proses</td>
         <?php
         require ("koneksidb301.php");
         $sql="select * from barang";
@@ -36,8 +36,9 @@
                 <td align=right>$harga</td>
                 <td align=right>$stok</td>
                 <td align=center>
+                    <a href='pertemuan601view.php?kodebarang=$kodebarang'>View</a>
                     <a href='pertemuan501edit.php?kodebarang=$kodebarang'>Edit</a> 
-                    <a href='hapus501.php?kodebarang=$kodebarang'>Delete</a>
+                    <a href='hapus501.php?kodebarang=$kodebarang' onclick=\"return confirm('Anda yakin mau menghapus data ini?')\" >Delete</a>
                 </td>
              </tr>";
         $n++;

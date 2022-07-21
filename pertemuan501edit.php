@@ -40,10 +40,10 @@
                     <td>: 
                         <select name="jenisbarang">
                         <?php
-                            foreach ($jenisbarang as $j){
-                                echo "<option value='$j' ";
-                                echo $row['jenisbarang']==$j?'selected="selected"':'';
-                                echo ">$j</option>";
+                            foreach ($jenisbarang as $jb){
+                                echo "<option value='$jb' ";
+                                echo $row['jenisbarang']==$jb?'selected="selected"':'';
+                                echo ">$jb</option>";
                             }
                         ?>
                         </select>
