@@ -5,46 +5,53 @@
     <body>
         <center>
         <font size=7>
-        Tampil Data Barang<br>
+        Tampil Data Mahasiswa <a href="session/logout.php">Logout</a><br>
         <hr>
         <table border=10>
         <tr bgcolor=silver>
             <td width=50><center>No
-            <td width=100><center>Kode Barang
-            <td width=200><center>Nama Barang
-            <td width=100><center>Jenis Barang
-            <td width=50><center>Ukuran
-            <td width=100><center>Harga
-            <td width=50><center>Stok
+            <td width=100><center>NIM
+            <td width=200><center>Nama
+            <td width=50><center>JK
+            <td width=100><center>Tanggal Lahir
+            <td width=100><center>Alamat
+            <td width=50><center>No. HP
             <td width=200><center>Proses</td>
         <?php
+        session_start();
+
+        if (!isset($_SESSION['username'])) {
+            header("Location: session/login.php"); // Redirect jika belum login
+            exit();
+        }
+
         require ("koneksidb301.php");
-        $sql="select * from barang";
+        $sql="select * from mahasiswa";
         $hasil=mysqli_query($conn,$sql);
         $row=mysqli_fetch_row($hasil);
         
         $n=1;
         do
         {
-        list($kodebarang,$namabarang,$jenisbarang,$ukuran,$harga,$stok)=$row;
+        list($nim,$namalengkap,$jk,$tanggallahir,$alamat,$nohp)=$row;
         echo "<tr>
                 <td>$n</td>
-                <td>$kodebarang</td>
-                <td>$namabarang</td>
-                <td>$jenisbarang</td>
-                <td>$ukuran</td>
-                <td align=right>$harga</td>
-                <td align=right>$stok</td>
+                <td>$nim</td>
+                <td>$namalengkap</td>
+                <td>$jk</td>
+                <td>$tanggallahir</td>
+                <td>$alamat</td>
+                <td>$nohp</td>
                 <td align=center>
-                    <a href='pertemuan601view.php?kodebarang=$kodebarang'>View</a>
-                    <a href='pertemuan501edit.php?kodebarang=$kodebarang'>Edit</a> 
-                    <a href='hapus501.php?kodebarang=$kodebarang' onclick=\"return confirm('Anda yakin mau menghapus data ini?')\" >Delete</a>
+                    <a href='pertemuan601view.php?nim=$nim'>View</a>
+                    <a href='pertemuan501edit.php?nim=$nim'>Edit</a> 
+                    <a href='hapus501.php?nim=$nim' onclick=\"return confirm('Anda yakin mau menghapus data ini?')\" >Delete</a>
                 </td>
              </tr>";
         $n++;
         }
         while($row=mysqli_fetch_row($hasil));
         ?>
-            <tr><td align="center" colspan="8"><a href="pertemuan401.php">Tambah Barang</a></td>
+            <tr><td align="center" colspan="8"><a href="pertemuan401.php">Tambah Mahasiswa</a></td>
     </body>
 </html>

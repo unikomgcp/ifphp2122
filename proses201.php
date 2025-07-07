@@ -1,7 +1,7 @@
 <?php
             echo "<center>";
             echo "<h1>";
-            echo "Program Penjualan ";
+            echo "Program Penjualan";
             echo "<hr>";
             echo "<table>";
 
@@ -31,5 +31,4 @@
             echo "<tr><td>Subtotal<td>:$subtotal";
             echo "<tr><td>Diskon<td>:$totaldiskon";
             echo "<tr><td>Total<td>:$total";
-
 ?>

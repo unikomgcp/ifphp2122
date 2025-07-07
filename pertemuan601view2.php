@@ -3,7 +3,7 @@
         <title>PHP Pertemuan 4</title>
     </head>
     <body align="center">
-        <h1>Update Data Mahasiswa</h1>
+        <h1>View Data Mahasiswa</h1>
         <hr>
         <?php
             include 'koneksidb301.php';
@@ -13,8 +13,8 @@
             $row   = mysqli_fetch_array($query);
 
         ?>
-        <form name="fview" action="" method="">
-        <input type="hidden" name="nimawal" value="<?php echo $nim; ?>" />
+        <form name="fview" action="" method="post">
+        <input type="hidden" name="nim" value="<?php echo $nim; ?>" />
             <table align="center">
                 <tr>
                     <td>NIM</td>
@@ -22,23 +22,12 @@
                 </tr>
                 <tr>
                     <td>Nama Lengkap</td>
-                    <td>: <?php echo $row['namalengkap']; ?></td>
+                    <td>: <?php echo $row['nama']; ?></td>
                 </tr>
                 <tr>
                     <td>Jenis Kelamin</td>
-                    <td>:  <?php 
-                                $jk = strtoupper($row['jeniskelamin']);
-                                if ($jk === 'L'){
-                                    echo "Laki-laki";
-                                } else {
-                                    echo "Perempuan";
-                                }
-                            ?>
+                    <td>: <?php echo $row['jk']; ?> 
                     </td>
-                </tr>
-                <tr>
-                    <td>Tanggal Lahir</td>
-                    <td>: <?php echo date('d F Y', strtotime($row['tanggallahir'])); ?></td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
@@ -52,9 +41,14 @@
                     <td>E-Mail</td>
                     <td>: <?php echo $row['email']; ?></td>
                 </tr>
+                <tr>
+                    <td>Jurusan</td>
+                    <td>: <?php echo $row['kodejurusan']; ?>
+                    </td>
+                </tr>
             </table>
             <hr>
-                <a href="pertemuan301db.php">Kembali</a>
+                &nbsp; <a href="pertemuan301db.php">Kembali</a>
         </form>
     </body>
 </html>

@@ -2,52 +2,47 @@
     <head>
         <title>PHP Pertemuan 4</title>
     </head>
-    <?php
-        require ("barangfunction.php");
-    ?>
     <body align="center">
-        <h1>Input Data Barang</h1>
+        <h1>Input Data Mahasiswa</h1>
         <hr>
-        <form name="fpenjualan" action="<?php simpanbarang(); ?>" method="post">
+        <form name="ftambahmahasiswa" action="simpan401.php" method="post">
             <table align="center">
                 <tr>
-                    <td>Kode Barang</td>
-                    <td>: <input name="kodebarang" size="5"></td>
+                    <td>NIM</td>
+                    <td>: <input name="nim" size="10" maxlength="8" placeholder="NIM"></td>
                 </tr>
                 <tr>
-                    <td>Nama Barang</td>
-                    <td>: <input name="namabarang" size="20"></td>
+                    <td>Nama Lengkap</td>
+                    <td>: <input name="nama" size="55" maxlength="55" placeholder="Nama Lengkap"></td>
                 </tr>
                 <tr>
-                    <td>Jenis Barang</td>
+                    <td>Jenis Kelamin</td>
                     <td>: 
-                        <select name="jenisbarang">
-                            <option value="O-Neck">O-Neck</option>
-                            <option value="V-Neck">V-Neck</option>
-                            <option value="T-Neck">T-Neck</option>
-                        </select>
+                        <input type="radio" name="jk" value="l">Laki-laki
+                        <input type="radio" name="jk" value="p">Perempuan
                     </td>
                 </tr>
                 <tr>
-                    <td>Ukuran</td>
-                    <td>: 
-                        <input type="radio" name="ukuran" value="S">S
-                        <input type="radio" name="ukuran" value="M">M
-                        <input type="radio" name="ukuran" value="L">L
-                    </td>
+                    <td>Tanggal Lahir</td>
+                    <td>: <input name="tanggallahir" type="date" placeholder="Tanggal Lahir"></td>
                 </tr>
                 <tr>
-                    <td>Harga</td>
-                    <td>: <input name="harga" size="10"></td>
+                    <td>Alamat</td>
+                    <td>: <input name="alamat" size="50" placeholder="Alamat"></td>
                 </tr>
                 <tr>
-                    <td>Stok</td>
-                    <td>: <input name="stok" size="2"></td>
+                    <td>No. HP</td>
+                    <td>: <input name="nohp" size="15" placeholder="nohp"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>: <input name="email" type="email" size="30" placeholder="email" /></td>
                 </tr>
             </table>
             <hr>
                 <input type="submit" value="Simpan">
                 <input type="reset" value="Reset">
+                &nbsp; <a href="pertemuan301db.php">Kembali</a>
         </form>
     </body>
 </html>

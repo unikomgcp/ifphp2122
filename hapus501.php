@@ -2,10 +2,10 @@
 include 'koneksidb301.php';
 
 // menyimpan data id kedalam variabel
-$kodebarang   = $_GET['kodebarang'];
+$nim   = $_GET['nim'];
 
 // query SQL untuk delete data
-$query="DELETE from barang where kodebarang='$kodebarang'";
+$query="DELETE from mahasiswa where nim='$nim'";
 mysqli_query($conn, $query);
 
 // mengalihkan ke halaman tabel

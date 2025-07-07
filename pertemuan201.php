@@ -5,7 +5,7 @@
     <body align="center">
         <h1>Data Penjualan</h1>
         <hr>
-        <form name="fpenjualan" action="proses201.php" method="post">
+        <form id="fpenjualan" action="proses201.php" method="POST">
             <table align="center">
                 <tr>
                     <td>Nama Barang</td>
